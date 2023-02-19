@@ -20,8 +20,17 @@ for index,row in df.iterrows():
     pdf.set_text_color(180, 180, 180)
     pdf.cell(w=0, h=10, txt=row["Topic"], align="R")
 
+    #set lines
+    for line in range(21,265,10):
+        pdf.line(10, line, 200, line)
+
     for i in range(row["Pages"] - 1):
         pdf.add_page()
+
+        # set lines
+        for line in range(21, 277, 10):
+            pdf.line(10, line, 200, line)
+
         # set the footer
         pdf.ln(277)
         pdf.set_font(family="Times", style="I", size=8)
